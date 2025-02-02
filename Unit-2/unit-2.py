@@ -23,20 +23,42 @@ def nearest_neighbour_algorithm(x_range, y_range, locations):
         
     temp_map = copy.deepcopy(generated_map)
     
+    
+    
     optermised_map = []
     
     optermised_map.append(temp_map.pop())
     
-    turtle.setup(width=500, height=500)
-    turtle.screensize(400, 400)
-    turtle.speed(0)
+    # turtle.setup(width=500, height=500)
+    # turtle.screensize(400, 400)
+    # turtle.speed(0)
 
-    turtle.penup()
-    turtle.goto(optermised_map[0][0], optermised_map[0][1])
     turtle.pendown()
+    
+    for x in range(len(temp_map)):
+        closest = 1000
+        location = 0
+        
+        for i in range(len(temp_map)):
+            distance = math.hypot(temp_map[i][0] - optermised_map[x][0], temp_map[i][1] - optermised_map[x][1])
+            if closest > distance:
+                closest = distance
+                location = i
+        optermised_map.append(temp_map[location])
+        turtle.goto(temp_map[location][0], temp_map[location][1])
+        del temp_map[location]
+        
+        
+        
+    turtle.goto(optermised_map[0][0], optermised_map[0][1])
+    
+    turtle.penup()
+
     turtle.done()
     
-    print("temp_map", temp_map)
-    print("optermised_map", optermised_map
-          )
+    # print("temp_map", temp_map)
+    # print("optermised_map", optermised_map
+          
+    return optermised_map
+
 nearest_neighbour_algorithm(200,200,200)
