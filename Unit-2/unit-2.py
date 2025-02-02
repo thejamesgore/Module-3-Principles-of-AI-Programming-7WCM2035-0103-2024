@@ -54,8 +54,8 @@ def nearest_neighbour_algorithm(x_range, y_range, locations):
     
     turtle.penup()
 
-    turtle.done()
     
+    turtle.done()
     # print("temp_map", temp_map)
     # print("optermised_map", optermised_map
           
