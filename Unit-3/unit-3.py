@@ -39,3 +39,13 @@ def initialise_first_row():
     print("Random Values:", random_values)
 
 initialise_first_row()
+
+def setup_turtle():
+    turtle.shape("triangle")
+    turtle.right(30)
+    turtle.penup()
+    turtle.speed("fastest")
+    turtle.shapesize(sizing)
+    
+setup_turtle()
+turtle.done()
